@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <foo-com></foo-com>
+    <bar-com></bar-com>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import FooCom from '@/components/Foo'
+import BarCom from '@/components/Bar'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { FooCom, BarCom }
 }
 </script>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.com {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
 }
 </style>
