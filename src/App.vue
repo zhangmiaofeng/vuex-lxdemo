@@ -10,7 +10,10 @@ import FooCom from '@/components/Foo'
 import BarCom from '@/components/Bar'
 export default {
   name: 'App',
-  components: { FooCom, BarCom }
+  components: { FooCom, BarCom },
+  created () {
+    console.log(this.$store)
+  }
 }
 </script>
 
