@@ -1,9 +1,12 @@
 <template>
-<div class='com'>
+  <div class="com">
     <h2>Foo组件</h2>
-    <p>0</p>
+    <!-- 可以在任何组件中使用this.$store.state.count
+      在模板中使用不用this
+     -->
+    <p>{{ $store.state.count }}</p>
     <button>+</button>
-</div>
+  </div>
 </template>
 
 <script>
@@ -12,4 +15,4 @@ export default {
 }
 </script>
 
-<style lang='less' scoped></style>
+<style lang="less" scoped></style>
