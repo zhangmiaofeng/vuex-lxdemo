@@ -8,9 +8,24 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   // 类似于组件中的data 存储数据
   state: {
-    count: 0
+    count: 0,
+    todos: [
+      { id: 1, title: '吃饭', done: true },
+      { id: 2, title: '写代码', done: false },
+      { id: 3, title: '看电视', done: true },
+      { id: 4, title: '刷抖音', done: false },
+      { id: 5, title: '睡觉', done: true }
+    ]
   },
-
+  // 容器的计算属性
+  // 注意：作用是基于原有的数据派生其他数据，而不是修改
+  getters: {
+    remainingCount (state) {
+      return state.todos.filter(item => {
+        return item.done === false
+      }).length
+    }
+  },
   // 类似于组件中的methods 作用：修改state
   // 1.定义mutation里面的函数
   // 2.在组件中调用mutation

@@ -5,13 +5,21 @@
       在模板中使用不用this
      -->
     <p>{{ $store.state.count }}</p>
+    <!-- 过滤出的结果 -->
+    <p>{{this.$store.getters.remainingCount}}</p>
+    <!-- 映射后可以直接差值表达式 -->
+    <p>{{remainingCount}}</p>
     <button>+</button>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'FooCom'
+  name: 'FooCom',
+  computed: {
+    ...mapGetters(['remainingCount'])
+  }
 }
 </script>
 
